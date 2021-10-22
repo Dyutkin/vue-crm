@@ -8,9 +8,9 @@
       :to="linkitem.url"
       :exact="linkitem.exact"
     >
-      <a href="linkitem.url" class="waves-effect waves-orange pointer">{{
-        linkitem.title
-      }}</a>
+      <a href="linkitem.url" class="waves-effect waves-orange pointer"
+        >{{ linkitem.title }}
+      </a>
     </router-link>
   </ul>
 </template>
@@ -21,10 +21,10 @@ export default {
     return {
       links: [
         { title: "Счет", url: "/", exact: true },
-        { title: "История", url: "/history", exact: false },
-        { title: "Планирование", url: "/planning", exact: false },
-        { title: "Новая запись", url: "/record", exact: false },
-        { title: "Категории", url: "/categories", exact: false },
+        { title: "История", url: "/history" },
+        { title: "Планирование", url: "/planning" },
+        { title: "Новая запись", url: "/record" },
+        { title: "Категории", url: "/categories" },
       ],
     };
   },
