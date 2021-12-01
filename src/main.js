@@ -3,6 +3,7 @@ import Vuelidate from "vuelidate";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import messagePlugin from "./utils/message.plugin";
 import dateFilter from "./components/filters/date.filter";
 import "./registerServiceWorker";
 import "materialize-css/dist/js/materialize.min";
@@ -11,6 +12,7 @@ Vue.config.productionTip = false;
 
 Vue.filter("date", dateFilter);
 
+Vue.use(messagePlugin);
 Vue.use(Vuelidate);
 
 new Vue({
