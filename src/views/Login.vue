@@ -69,6 +69,7 @@
 
 <script>
 import { email, minLength, required } from "vuelidate/lib/validators";
+import messages from "@/utils/messages";
 
 export default {
   name: "login",
@@ -81,6 +82,12 @@ export default {
   validations: {
     email: { email, required },
     password: { required, minLength: minLength(4) },
+  },
+  mounted() {
+    const message = this.$route.query.message;
+    if (message && messages[message]) {
+      this.$message(messages[message]);
+    }
   },
   computed: {
     isMailNotValid() {
@@ -98,7 +105,6 @@ export default {
   },
   methods: {
     submitHandler() {
-      console.log(this.$v);
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;

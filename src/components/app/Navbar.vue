@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     logout() {
-      this.$router.push("/login?message=logut");
+      this.$router.push("/login?message=logout");
     },
   },
   beforeMount() {
