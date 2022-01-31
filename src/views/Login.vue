@@ -104,12 +104,20 @@ export default {
     },
   },
   methods: {
-    submitHandler() {
+    async submitHandler() {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
-      this.$router.push("/");
+      try {
+        await this.$store.dispatch("login", {
+          email: this.email,
+          password: this.password,
+        });
+        this.$router.push("/");
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 };
